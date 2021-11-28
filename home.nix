@@ -246,5 +246,151 @@
                 };
             };
         };
+
+        vscode = {
+          enable = true;
+          package = pkgs.vscodium;    # You can skip this if you want to use the unfree version
+            userSettings = {
+                "workbench.startupEditor"= "newUntitledFile";
+                "telemetry.telemetryLevel" = "off";
+                "workbench.colorTheme" = "GitHub Dark Dimmed";
+                "window.zoomLevel" = 1;
+                "workbench.iconTheme" = "Monokai Pro (Filter Spectrum) Icons";
+                "editor.suggestSelection" = "first";
+                "vsintellicode.modify.editor.suggestSelection" = "automaticallyOverrodeDefaultValue";
+                "files.autoSave" = "afterDelay";
+                "php.validate.enable" = true;
+                "php.validate.executablePath" = "/run/current-system/sw/bin/php";
+                "editor.fontFamily" = "FantasqueSansMono Nerd Font Mono";
+                "editor.fontLigatures" = true;
+                "security.workspace.trust.untrustedFiles" = "open";
+                "vscode-neovim.neovimExecutablePaths.linux" = "/etc/profiles/per-user/thynkon/bin/nvim";
+                "emmet.triggerExpansionOnTab" = true;
+                "blade.format.enable" = true;
+            };
+          extensions = (with pkgs.vscode-extensions; [
+                github.github-vscode-theme
+            ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+                # laravel
+                {
+                    name = "laravel-blade";
+                    publisher = "onecentlin";
+                    version = "1.28.0";
+                    sha256 = "5c9430873c3da58a8ac18fa571307c57dd8d7512f3d3ce9e0cc45eb0d1ab23d1";
+                }
+                {
+                    name = "laravel-extra-intellisense";
+                    publisher = "amiralizadeh9480";
+                    version = "0.6.1";
+                    sha256 = "44de3b11944360129350093340808a2dd51f13b762c440f3e26197ca5134c641";
+                }
+                {
+                    name = "dotenv";
+                    publisher = "mikestead";
+                    version = "1.0.1";
+                    sha256 = "762782ccd3887198931aee0cbf9cd8946ee32e1684b09474e6a6f3cf343b4567";
+                }
+                {
+                    name = "laravel5-snippets";
+                    publisher = "onecentlin";
+                    version = "1.13.0";
+                    sha256 = "97c073186b4ad9db3561d00430af96a7b207e0b10cd2a506b39b8a7d90c44ecf";
+                }
+                {
+                    name = "laravel-artisan";
+                    publisher = "ryannaddy";
+                    version = "0.0.28";
+                    sha256 = "87266a261235aeed3ac2c3c28d5d52c8553d71db751a9e0077f8e7595bb762df";
+                }
+                {
+                    name = "laravel-goto-controller";
+                    publisher = "stef-k";
+                    version = "0.0.15";
+                    sha256 = "2c9bdfbf7e546c5eacd0a56dbb603030eb78511ce84dc50d4102b56ffb53c14d";
+                }
+                {
+                    name = "laravel-goto-view";
+                    publisher = "codingyu";
+                    version = "1.3.4";
+                    sha256 = "ecb74342f66441a103a4dc9a6a83aaa49065ef9c246582f2adb86ada1bc90a5f";
+                }
+
+                # PHP
+                {
+                    name = "vscode-intelephense-client";
+                    publisher = "bmewburn";
+                    version = "1.7.1";
+                    sha256 = "e4961a0361eac5b2684734ccb27cd8dda438ec8a00be25fcf048e22f4e398a02";
+                }
+                {
+                    name = "php-debug";
+                    publisher = "felixfbecker";
+                    version = "1.22.0";
+                    sha256 = "9a908ea87d0fa0c3eae615253f81031bf5f0863d65b471c7ddde5b0d0c99f783";
+                }
+                {
+                    name = "php-cs-fixer";
+                    publisher = "junstyle";
+                    version = "0.2.8";
+                    sha256 = "6a8340fe5718c3f4f4d29c3ab7adaa8d4c5fddbdc86a20206b30f7edde42d1b0";
+                }
+                {
+                    name = "php-add-property";
+                    publisher = "kotfire";
+                    version = "1.1.0";
+                    sha256 = "fdf2ec0c204dbd4862c745c180d7704787a1ccd3f28232d5f8f0cb2b05a8688c";
+                }
+                {
+                    name = "php-constructor";
+                    publisher = "MehediDracula";
+                    version = "0.1.2";
+                    sha256 = "7e39f21280ec54bca553f3ef9a01d3fc4fdea18f874b4c8737f2895e274679ff";
+                }
+                {
+                    name = "php-namespace-resolver";
+                    publisher = "MehediDracula";
+                    version = "1.1.8";
+                    sha256 = "95bc07b2d28bd5c46c04a85e32124b24010bd9ccb05c34a5aa1adef37352fdc8";
+                }
+                {
+                    name = "php-docblocker";
+                    publisher = "neilbrayfield";
+                    version = "2.6.1";
+                    sha256 = "e36c9c9048419169d9c0749699d1c0a2bc14445cb97cb0b5732e05fd9260f373";
+                }
+                {
+                    name = "phpunit-snippets";
+                    publisher = "onecentlin";
+                    version = "1.1.0";
+                    sha256 = "38a98eb99e76c2f6e6cb4736ac8d9ad5b10e8cf357f5af99fef65e7b1b2541e4";
+                }
+                {
+                    name = "test-adapter-converter";
+                    publisher = "ms-vscode";
+                    version = "0.1.4";
+                    sha256 = "16af502b733b3aed2350ac5e281ababc4b3ecd05bc8798212066ba69ca216009";
+                }
+                {
+                    name = "vscode-test-explorer";
+                    publisher = "hbenl";
+                    version = "2.21.1";
+                    sha256 = "7c7c9e3ddf1f60fb7bccf1c11a256677c7d1c7e20cdff712042ca223f0b45408";
+                }
+                {
+                    name = "vscode-phpunit";
+                    publisher = "recca0120";
+                    version = "2.0.76";
+                    sha256 = "5c51f52fe339f1cf098d3986b7bd72c871639dae44cd459a1224ca091f10c575";
+                }
+
+                # neovim
+                {
+                    name = "vscode-neovim";
+                    publisher = "asvetliakov";
+                    version = "0.0.82";
+                    sha256 = "6149728023e5785fbf4edc9dd8f79e6c0a1991c0211666ad6c78b59dde97c09d";
+                }
+          ];
+        };
     };
 }
