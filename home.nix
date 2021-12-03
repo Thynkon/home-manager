@@ -270,6 +270,8 @@
             };
           extensions = (with pkgs.vscode-extensions; [
                 github.github-vscode-theme
+                ms-python.python
+                asvetliakov.vscode-neovim
             ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
                 # laravel
                 {
@@ -382,14 +384,26 @@
                     version = "2.0.76";
                     sha256 = "5c51f52fe339f1cf098d3986b7bd72c871639dae44cd459a1224ca091f10c575";
                 }
-
-                # neovim
+                # python
+                # ruby
                 {
-                    name = "vscode-neovim";
-                    publisher = "asvetliakov";
-                    version = "0.0.82";
-                    sha256 = "6149728023e5785fbf4edc9dd8f79e6c0a1991c0211666ad6c78b59dde97c09d";
+                    name = "Ruby";
+                    publisher = "rebornix";
+                    version = "0.28.1";
+                    sha256 = "1c051dbfed93fa7789e5a086890dfba423bac7aaf9ec72149cb9b86a983d2f9d";
                 }
+                {
+                    name = "vscode-ruby";
+                    publisher = "wingrunr21";
+                    version = "0.28.0";
+                    sha256 = "1f77f5f9cdf5c7e9600b38604dbd2e2e0f41767de96722463cfc1fa4262b4bbd";
+                }
+#                {
+#                    name = "codota";
+#                    publisher = "tabnine-vscode";
+#                    version = "3.5.1";
+#                    sha256 = "ccfd7acd7fd54f7b569af9496478c28cee364748dd2d3054b53d1db2b44f941a";
+#                }
           ];
         };
     };
