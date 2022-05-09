@@ -1,0 +1,21 @@
+{
+  "blade.format.enable": true,
+  "editor.fontFamily": "FantasqueSansMono Nerd Font Mono",
+  "editor.fontLigatures": true,
+  "editor.suggestSelection": "first",
+  "emmet.triggerExpansionOnTab": true,
+  "files.autoSave": "afterDelay",
+  "php.validate.enable": true,
+  "php.validate.executablePath": "/run/current-system/sw/bin/php",
+  "remote.SSH.configFile": "/home/thynkon/vm/ssh_config",
+  "rubyTestExplorer.logpanel": true,
+  "rubyTestExplorer.testFramework": "rspec",
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.telemetryLevel": "off",
+  "vscode-neovim.neovimExecutablePaths.linux": "/etc/profiles/per-user/thynkon/bin/nvim",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+  "workbench.startupEditor": "newUntitledFile"
+}
